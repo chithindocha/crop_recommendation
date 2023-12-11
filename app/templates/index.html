@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home</title>
+    <link rel="icon" href="static\images\logo.png">
+
+    <style>
+        body {
+            background-color: #d4a3ae;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        center {
+            text-align: left;
+        }
+
+        table {
+            max-width: 400px;
+            width: 100%;
+            border-collapse: collapse;
+            border: none
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        input {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-left: 8px;
+            box-sizing: border-box;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <center>
+
+        <h1> River Water Quality Forecasting </h1><br>
+        
+        <form action="/predict" method="post">
+        
+            <table>
+                <tr>
+                    <th><label for="nitrogen">nitrogen:</label></th>
+                    <td><input type="text" name="nitrogen" required placeholder="Enter Nitrogen value"></td>
+                </tr>
+    
+                <tr>
+                    <th><label for="phosphourus">phosphourus:</label></th>
+                    <td><input type="text" name="phosphourus" required placeholder="Enter phosphourus value"></td>
+                </tr>
+    
+                <tr>
+                    <th><label for="potassium">potassium:</label></th>
+                    <td><input type="text" name="potassium" placeholder="Enter potassium value"></td>
+                </tr>
+    
+                <tr>
+                    <th><label for="temperature">temperature:</label></th>
+                    <td><input type="text" name="temperature" required placeholder="Enter temperature value"></td>
+                </tr>
+    
+                <tr>
+                    <th><label for="humidity">humidity:</label></th>
+                    <td><input type="text" name="humidity" required placeholder="Enter humidity value"></td>
+                </tr>
+    
+                <tr>
+                    <th><label for="ph">ph:</label></th>
+                    <td><input type="text" name="ph" required placeholder="Enter ph value"></td>
+                </tr>
+    
+                <tr>
+                    <th><label for="rainfall">rainfall:</label></th>
+                    <td><input type="text" name="rainfall" required placeholder="Enter rainfall value"></td>
+                </tr>
+            </table>
+    
+            <button type="submit">Predict</button>
+        </form>
+        
+    </center>
+
+</body>
+</html>

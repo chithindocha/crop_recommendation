@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="description" content="">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>Home</title>
+   <link rel="icon" href="static\images\logo.png">
+
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mui/material@5.10.14/dist/mui.min.css">
+
+   <style>
+      body {
+         font-family: Roboto, sans-serif;
+      }
+
+      .center {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         height: 100vh;
+      }
+
+      .form-container {
+         padding: 20px;
+         border-radius: 4px;
+         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+         max-width: 400px;
+         width: 100%;
+         background-color: grey;
+      }
+
+      .form-heading {
+         font-size: 24px;
+         margin-bottom: 20px;
+      }
+
+      .input-field {
+         margin-bottom: 10px;
+         width: 93.5%;
+      }
+
+      .input-label {
+         font-size: 16px;
+         font-weight: 500;
+         padding-bottom: 0.3rem;
+      }
+
+      .input {
+         width: 100%;
+         padding: 10px;
+         border-radius: 4px;
+         border: 1px solid #ddd;
+         outline: none;
+      }
+
+      .submit-button {
+         background-color: #4caf50;
+         color: #fff;
+         padding: 10px 20px;
+         border-radius: 4px;
+         font-weight: bold;
+         cursor: pointer;
+      }
+
+      .submit-button:hover {
+         background-color: #45a049;
+      }
+   </style>
+</head>
+
+<body>
+
+   <body class="center">
+      <div class="form-container">
+         <h2 class="form-heading">River Water Quality Forecasting</h2>
+
+         <form action="/predict" method="post">
+            <div class="input-field">
+               <div class="input-label">
+                  <label for="nitrogen">Nitrogen:</label>
+               </div>
+               <input type="text" name="nitrogen" required class="input" placeholder="Enter Nitrogen value">
+            </div>
+
+            <div class="input-field">
+               <div class="input-label">
+                  <label for="phosphourus">Phosphorus:</label>
+               </div>
+               <input type="text" name="phosphourus" required class="input" placeholder="Enter phosphorus value">
+            </div>
+
+            <div class="input-field">
+               <div class="input-label">
+                  <label for="potassium">Potassium:</label>
+               </div>
+               <input type="text" name="potassium" class="input" placeholder="Enter potassium value">
+            </div>
+
+            <div class="input-field">
+               <div class="input-label">
+                  <label for="temperature">Temperature:</label>
+               </div>
+               <input type="text" name="temperature" required class="input" placeholder="Enter temperature value">
+            </div>
+
+            <div class="input-field">
+               <div class="input-label">
+                  <label for="humidity">Humidity:</label>
+               </div>
+               <input type="text" name="humidity" required class="input" placeholder="Enter humidity value">
+            </div>
+
+            <div class="input-field">
+               <div class="input-label">
+                  <label for="ph">pH:</label>
+               </div>
+               <input type="text" name="ph" required class="input" placeholder="Enter pH value">
+            </div>
+
+            <div class="input-field">
+               <div class="input-label">
+                  <label for="rainfall">Rainfall:</label>
+               </div>
+               <input type="text" name="rainfall" required class="input" placeholder="Enter rainfall">
+            </div>
+
+            <div class="button-container">
+               <button type="submit" class="submit-button">Predict</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+

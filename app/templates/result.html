@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mui/material@5.10.14/dist/mui.min.css">
+
+    <style>
+        body {
+            font-family: Roboto, sans-serif;
+            background-color: white;
+        }
+
+        .center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .result-container {
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .result-heading {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .prediction {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <div class="result-container">
+            <h2 class="result-heading">Prediction Result:</h2>
+
+            <p class="prediction">{{ prediction1 }}</p>
+            <img src="static\images\non_potable.png" height = "400" width = "400" alt=img>
+        </div>
+    </div>
+</body>
+
+</html>
