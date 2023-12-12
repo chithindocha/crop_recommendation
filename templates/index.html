@@ -1,112 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Home</title>
+    <title>CROPhecy</title>
     <link rel="icon" href="static\images\logo.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mui/material@5.10.14/dist/mui.min.css">
 
     <style>
         body {
-            background-color: #d4a3ae;
+            font-family: Roboto, sans-serif;
+        }
+
+        .center {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
             height: 100vh;
-            margin: 0;
         }
 
-        center {
-            text-align: left;
-        }
-
-        table {
+        .form-container {
+            padding: 20px;
+            border-radius: 4px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
             max-width: 400px;
             width: 100%;
-            border-collapse: collapse;
-            border: none
+            background-color: grey;
         }
 
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
+        .form-heading {
+            font-size: 24px;
+            margin-bottom: 20px;
         }
 
-        input {
-            width: calc(100% - 16px);
-            padding: 8px;
-            margin-left: 8px;
-            box-sizing: border-box;
-            border-radius: 5px;
+        .input-field {
+            margin-bottom: 10px;
+            width: 93.5%;
         }
 
-        button {
+        .input-label {
+            font-size: 16px;
+            font-weight: 500;
+            padding-bottom: 0.3rem;
+        }
+
+        .input {
             width: 100%;
             padding: 10px;
-            background-color: #4caf50;
-            color: white;
-            border: none;
             border-radius: 4px;
+            border: 1px solid #ddd;
+            outline: none;
+        }
+
+        .submit-button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: bold;
             cursor: pointer;
         }
 
-        button:hover {
+        .submit-button:hover {
             background-color: #45a049;
         }
     </style>
 </head>
+
 <body>
 
-    <center>
+    <body class="center">
+        <div class="form-container">
+            <h2 class="form-heading">Weather Info</h2>
 
-        <h1> River Water Quality Forecasting </h1><br>
-        
-        <form action="/predict" method="post">
-        
-            <table>
-                <tr>
-                    <th><label for="nitrogen">nitrogen:</label></th>
-                    <td><input type="text" name="nitrogen" required placeholder="Enter Nitrogen value"></td>
-                </tr>
-    
-                <tr>
-                    <th><label for="phosphourus">phosphourus:</label></th>
-                    <td><input type="text" name="phosphourus" required placeholder="Enter phosphourus value"></td>
-                </tr>
-    
-                <tr>
-                    <th><label for="potassium">potassium:</label></th>
-                    <td><input type="text" name="potassium" placeholder="Enter potassium value"></td>
-                </tr>
-    
-                <tr>
-                    <th><label for="temperature">temperature:</label></th>
-                    <td><input type="text" name="temperature" required placeholder="Enter temperature value"></td>
-                </tr>
-    
-                <tr>
-                    <th><label for="humidity">humidity:</label></th>
-                    <td><input type="text" name="humidity" required placeholder="Enter humidity value"></td>
-                </tr>
-    
-                <tr>
-                    <th><label for="ph">ph:</label></th>
-                    <td><input type="text" name="ph" required placeholder="Enter ph value"></td>
-                </tr>
-    
-                <tr>
-                    <th><label for="rainfall">rainfall:</label></th>
-                    <td><input type="text" name="rainfall" required placeholder="Enter rainfall value"></td>
-                </tr>
-            </table>
-    
-            <button type="submit">Predict</button>
+        <form action="/weather" method="post">
+            <div class="input-field">
+                <div class="input-label">
+                    <label for="cityName">City Name:</label>
+                </div>
+                <input type="text" name="cityName" required class="input" placeholder="Enter City Name">
+            </div>
+
+            <div class="input-field">
+                <div class="input-label">
+                    <label for="stateName">State Name:</label>
+                </div>
+                <input type="text" name="stateName" required class="input" placeholder="Enter State Name">
+            </div>
+
+            <div class="input-field">
+                <div class="input-label">
+                    <label for="countryName">Country Name:</label>
+                </div>
+                <input type="text" name="countryName" class="input" value = "IN">
+            </div>
+
+            <div class="button-container">
+                <button type="submit" class="submit-button">Find Weather info</button>
+            </div>
         </form>
-        
-    </center>
-
+    </div>
 </body>
-</html>

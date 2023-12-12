@@ -88,9 +88,9 @@
 
             <div class="input-field">
                <div class="input-label">
-                  <label for="phosphourus">Phosphorus:</label>
+                  <label for="phosphorus">Phosphorus:</label>
                </div>
-               <input type="text" name="phosphourus" required class="input" placeholder="Enter phosphorus value">
+               <input type="text" name="phosphorus" required class="input" placeholder="Enter phosphorus value">
             </div>
 
             <div class="input-field">
@@ -104,14 +104,14 @@
                <div class="input-label">
                   <label for="temperature">Temperature:</label>
                </div>
-               <input type="text" name="temperature" required class="input" placeholder="Enter temperature value">
+               <input type="text" name="temperature" required class="input" value = {{ temp }}>
             </div>
 
             <div class="input-field">
                <div class="input-label">
                   <label for="humidity">Humidity:</label>
                </div>
-               <input type="text" name="humidity" required class="input" placeholder="Enter humidity value">
+               <input type="text" name="humidity" required class="input" value = {{ humidity }}>
             </div>
 
             <div class="input-field">
@@ -130,6 +130,11 @@
 
             <div class="button-container">
                <button type="submit" class="submit-button">Predict</button>
+            </div>
+         </form>
+         <form action="/weather_info" method="post">
+            <div class="button-container">
+               <button type="submit" class="submit-button">Weather Info</button>
             </div>
          </form>
    </div>
