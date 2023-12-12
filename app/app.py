@@ -21,8 +21,9 @@ def predict():
                     float(request.form['rainfall']),
                     ]
         prediction1 = model.predict([features])[0]
+        url = f"static/images/{prediction1}.jpg"
 
-        return render_template('result.html', prediction1=prediction1)
+        return render_template('result.html', prediction1=prediction1, url = url)
 
 if __name__ == '__main__':
     app.run(debug=True)
