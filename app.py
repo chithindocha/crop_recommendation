@@ -24,10 +24,10 @@ def make_prediction(input_data):
 def home():
     return render_template('index1.html')
 
-@app.route('/weather_info', methods=['POST'])
-def weather_info():
-    if request.method == 'POST':
-        return render_template('index.html')
+# @app.route('/weather_info', methods=['POST'])
+# def weather_info():
+#     if request.method == 'POST':
+#         return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -54,10 +54,7 @@ def predict():
 def weather():
     data = None
     if request.method == 'POST':
-        city = request.form['cityName']
-        state = request.form['stateName']
-        country = request.form['cityName']
-        data = get_weather(city, state, country)
+        data = get_weather()
         temp = data.temperature
         humidity = data.humidity
     return render_template('index1.html', temp = temp, humidity = humidity)

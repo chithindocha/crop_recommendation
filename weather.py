@@ -2,6 +2,9 @@ import requests
 from dotenv import load_dotenv
 import os
 from dataclasses import dataclass
+import requests
+
+
 
 load_dotenv()
 api_key = os.getenv('API_KEY')
@@ -11,10 +14,11 @@ class WeatherData:
     temperature: float
     humidity: float
 
-def get_lat_lon(city_name, state_code, country_code, API_key):
-    resp = requests.get(f'http://api.openweathermap.org/geo/1.0/direct?q={city_name},{state_code},{country_code}&appid={API_key}').json()
-    data = resp[0]
-    lat, lon = data.get('lat'), data.get('lon')
+def get_lat_lon():
+    res = requests.get('https://ipinfo.io?token=4f6b8efea1342c').json()
+    lat = res['loc'].split(',')[0]
+    lon = res['loc'].split(',')[1]
+
     return lat, lon
 
 def get_current_weather(lat, lon, API_key):
@@ -25,8 +29,8 @@ def get_current_weather(lat, lon, API_key):
     )
     return data
 
-def main(city_name, state_name, country_name):
-    lat, lon = get_lat_lon('Amravati', 'MH', 'IN', api_key)
+def main():
+    lat, lon = get_lat_lon()
     weather_data = get_current_weather(lat, lon, api_key)
     return weather_data
 
