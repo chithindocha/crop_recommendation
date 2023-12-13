@@ -15,9 +15,12 @@ class WeatherData:
     humidity: float
 
 def get_lat_lon():
-    res = requests.get('https://ipinfo.io?token=4f6b8efea1342c').json()
-    lat = res['loc'].split(',')[0]
-    lon = res['loc'].split(',')[1]
+    res = requests.get('https://get.geojs.io/v1/ip.json').json()
+    ip = res['ip']
+    url = 'https://get.geojs.io/v1/ip/geo/'+ip+'.json'
+    resp = requests.get(url).json()
+    lat = resp['latitude']
+    lon = resp['longitude']
 
     return lat, lon
 
